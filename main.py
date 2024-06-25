@@ -1,6 +1,7 @@
 ### Yuri Duarte Theisen     RA: 1125371         Vinicius Radaelli da Silva  RA: 1135940
 
 import pygame
+import os
 from tkinter import simpledialog
 pygame.init()
 
@@ -8,7 +9,8 @@ tamanho_tela = (800, 600)
 tela = pygame.display.set_mode((tamanho_tela))
 nomeJogo = pygame.display.set_caption("Space Marker")
 fundo = pygame.image.load("img/fundo.jpg")
-#icone = 
+icone = pygame.image.load("img/icone.png")
+pygame.display.set_icon(icone)
 relogio = pygame.time.Clock()
 branco = (255,255,255)
 cinza = (190, 190, 190)
@@ -29,7 +31,9 @@ while True :
             nomeEstrelas[caixaPergunta]= posicao
 
     tela.fill(branco)
-    tela.blit (fundo, (0,0))
+    tela.blit (fundo,(0,0))
+    
+    
     for nome, pos in nomeEstrelas.items():
         texto = fonte.render(nome + str(pos), True, cinza)
         tela.blit(texto, pos)
