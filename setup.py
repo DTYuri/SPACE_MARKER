@@ -11,3 +11,7 @@ cx_Freeze.setup(
         }
     }, executables = executaveis
 )
+
+# Executar CMD
+# python setup.py build
+# python setup.py bdist_msi

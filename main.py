@@ -41,7 +41,7 @@ def jogo ():
                     caixaPergunta = f"Desconhecido {posicao}"
                 nomeEstrelas[caixaPergunta]= posicao
                 
-            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F10:         # salvar
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F10:         
                     try:
                         dados = open("log.txt","w")
                         dados.write(str(nomeEstrelas))
@@ -49,7 +49,7 @@ def jogo ():
                     except:
                         pass
 
-            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F11:        # carregar
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F11:        
                     try:
                         tela.fill(branco)
                         dados = open("log.txt","r")
@@ -57,7 +57,7 @@ def jogo ():
                         dados.close()
                     except:
                         pass
-            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F12:       # excluir
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_F12:       
                         nomeEstrelas = {}
                         dados = open("log.txt","w")
                         dados.write(str(nomeEstrelas))
