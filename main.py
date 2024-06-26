@@ -36,6 +36,28 @@ def jogo ():
                 if caixaPergunta is None or caixaPergunta.strip() == "":
                     caixaPergunta = f"Desconhecido {posicao}"
                 nomeEstrelas[caixaPergunta]= posicao
+                
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_1:         #Para salvar
+                    try:
+                        arquivo = open("salvos.txt","w")
+                        arquivo.write(str(Star))
+                        arquivo.close()
+                    except:
+                        pass
+
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_2:        #Para carregar
+                    try:
+                        tela.fill(branco)
+                        arquivo = open("salvos.txt","r")
+                        Star = eval(arquivo.read())
+                        arquivo.close()
+                    except:
+                        pass
+            elif evento.type == pygame.KEYDOWN and evento.key == pygame.K_3:       #Para excluir
+                        Star = {}
+                        arquivo = open("salvos.txt","w")
+                        arquivo.write(str(Star))
+                        arquivo.close()
 
         tela.fill(branco)
         tela.blit (fundo,(0,0))
